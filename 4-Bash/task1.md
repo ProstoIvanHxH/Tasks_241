@@ -9,39 +9,24 @@
 нет, достаточно шбанга и прав на выполнение
 
 3. Напишите скрипт который выполнит автоматически действия из блока работы с файлами. ( не забудьте включить set -euo pipefail для того что бы ваш скрипт было удобнее отлаживать. Опишите что включают эти флаги)
-
+```sh
 #!/bin/bash
-
 set -euo pipefail
-
 cd /
-
 ls
-
 ls -la
-
 mkdir -p test0/abobus
-
 cd test0
-
 cd abobus
-
 echo text > test.txt
-
 mv test.txt ../
-
 cd..
-
 cp test.txt abobus
-
 mv test.txt new_test.txt
-
 diff -s new_test.txt abobus/test.txt
-
 sort -r new_test.txt
-
 rm -r test0
-
+```
 флаги
 
 е- прекращает выполнение при ошибке команды
